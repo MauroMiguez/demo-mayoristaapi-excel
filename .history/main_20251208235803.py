@@ -171,7 +171,7 @@ def image_url_to_path(image_url: str):
 
     return None
 
-""" def send_order_mail(to_email, excel_path, pdf_path):
+def send_order_mail(to_email, excel_path, pdf_path):
     msg = EmailMessage()
     msg["Subject"] = "Nuevo pedido recibido"
     msg["From"] = os.getenv("EMAIL_FROM", "pedidos@tumarca.com")
@@ -189,7 +189,7 @@ def image_url_to_path(image_url: str):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(os.getenv("SMTP_USER", "TU_MAIL@gmail.com"), os.getenv("SMTP_PASS", "APP_PASSWORD"))
-        smtp.send_message(msg) """
+        smtp.send_message(msg)
 
 
 # =========================

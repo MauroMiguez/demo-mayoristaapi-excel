@@ -273,14 +273,7 @@ def create_order(order: Order):
     })
 
     # ✅ Envío de mail (no rompe el server si falla)
-    """ try:
-        send_order_mail(
-            "ventas@tumarca.com",
-            excel_path,
-            pdf_path
-        )
-    except Exception as e:
-        print("Error enviando email:", e) """
+    
 
     return {
         "order_id": order_id,
