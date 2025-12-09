@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f4f4;
+  color: #111;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

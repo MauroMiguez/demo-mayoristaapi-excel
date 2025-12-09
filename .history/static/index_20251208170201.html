@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="brand-header">
+  <div class="brand-overlay">
+    <h1>Catálogo Mayorista</h1>
+    <p>Colección actual · Venta exclusiva</p>
+  </div>
+</header>
+
+
+<section class="cliente">
+
+  <h2>Datos del cliente</h2>
+
+  <p id="clienteWarning" class="cliente-warning" style="display:none">
+    Para continuar, completá todos los datos obligatorios.
+  </p>
+
+  <p id="clienteSuccess" class="cliente-success" style="display:none">
+    ✅ Datos registrados correctamente. Gracias.
+  </p>
+
+  <div class="cliente-form">
+    <input id="nombre" placeholder="Nombre y apellido">
+    <input id="empresa" placeholder="Empresa">
+    <input id="provincia" placeholder="Provincia">
+    <input id="cuit" placeholder="CUIT">
+    <input id="telefono" placeholder="Teléfono">
+    <input id="observaciones" placeholder="Observaciones">
+  </div>
+
+  <button class="btn-registrar" onclick="registrarCliente()">
+    Registrar datos
+  </button>
+
+</section>
+
+
+<section class="pedido">
+  <h2>Pedido</h2>
+  <div class="pedido-items" id="pedidoLista"></div>
+  <div id="pedidoTotal" style="margin-top:15px;font-size:18px"></div>
+
+  <button onclick="enviarPedido()">Generar pedido</button>
+</section>
+
+
+<section class="catalog">
+
+<!-- CARD 1 -->
+<div class="card" data-producto="art.3600" data-color="Celeste">
+  <div class="img-wrap">
+    <img class="main-img" src="images/pijama-3600/celeste.jpg" />
+  </div>
+
+  <h3>art.3600 - Pijama</h3>
+  <p>colores:  celeste - rosa - crema</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/pijama-3600/celeste.jpg"
+      data-color="Celeste"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/pijama-3600/rosa.jpg"
+      data-color="Rosa"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/pijama-3600/crema.jpg"
+      data-color="Crema"
+      onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>talle 1</option>
+      <option>talle 2</option>
+      <option>talle 3</option>
+      <option>talle 4</option>
+      <option>talle 5</option>
+      <option>talle 6</option>
+      <option>talle 7</option>
+      <option>talle 8</option>
+      <option>curva completa</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+<!-- CARD 2  -->
+<div class="card" data-producto="art.3607" data-color="Gris">
+  <div class="img-wrap">
+    <img class="main-img" src="images/pijama-3607/gris.jpg" />
+  </div>
+
+  <h3>art.3607 - Pijama</h3>
+  <p>colores: gris - acua</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/pijama-3607/gris.jpg"
+      data-color="Gris"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/pijama-3607/acua.jpg"
+      data-color="Acua"
+      onclick="changeImg(this)" />
+   
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>talle 1</option>
+      <option>talle 2</option>
+      <option>talle 3</option>
+      <option>talle 4</option>
+      <option>talle 5</option>
+      <option>talle 6</option>
+      <option>talle 7</option>
+      <option>talle 8</option>
+      <option>curva completa</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+<!-- CARD 3 -->
+<div class="card" data-producto="art.600 - Corpiño doble tela" data-color="Negro">
+  <div class="img-wrap">
+    <img class="main-img" src="images/corpiño-doble-t/negro.jpg" />
+  </div>
+
+  <h3>art.600 - Corpiño doble tela perforado</h3>
+  <p>colores: blanco - negro</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/corpiño-doble-t/negro.jpg"
+      data-color="Negro"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/corpiño-doble-t/blanco.jpg"
+      data-color="Blanco"
+      onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>85</option>
+      <option>90</option>
+      <option>95</option>
+      <option>100</option>
+      <option>105</option>
+      <option>curva completa</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+
+<!-- CARD 4  -->
+<div class="card" data-producto="art.1022 - Camiseta Morley" data-color="Negro">
+  <div class="img-wrap">
+    <img class="main-img" src="images/camiseta-morley/negro.jpg" />
+  </div>
+
+  <h3>art.1022 - Camiseta Morley</h3>
+  <p>colores: hueso - gris - negro</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/camiseta-morley/negro.jpg"
+      data-color="Negro"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/camiseta-morley/hueso.jpg"
+      data-color="Hueso"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/camiseta-morley/gris.jpg"
+      data-color="Gris"
+      onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>curva completa</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+</section>
+
+<script src="app.js"></script>
+
+</body>
+</html>

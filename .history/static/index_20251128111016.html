@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Catálogo Mayorista</h1>
+    <p>Seleccione los productos para generar su pedido</p>
+  </header>
+
+  <section class="catalog">
+
+    <div class="card" data-producto="Remera Lisa">
+      <img src="https://via.placeholder.com/300x300?text=Remera+Lisa" />
+      <h3>Remera Lisa</h3>
+
+      <label>Color</label>
+      <select class="color">
+        <option>Negro</option>
+        <option>Blanco</option>
+        <option>Gris</option>
+      </select>
+
+      <label>Cantidad</label>
+      <input type="number" class="qty" value="1" min="1" />
+
+      <button onclick="agregarProducto(this)">Agregar</button>
+    </div>
+
+    <div class="card" data-producto="Buzo Oversize">
+      <img src="https://via.placeholder.com/300x300?text=Buzo+Oversize" />
+      <h3>Buzo Oversize</h3>
+
+      <label>Color</label>
+      <select class="color">
+        <option>Negro</option>
+        <option>Gris</option>
+      </select>
+
+      <label>Cantidad</label>
+      <input type="number" class="qty" value="1" min="1" />
+
+      <button onclick="agregarProducto(this)">Agregar</button>
+    </div>
+
+  </section>
+
+  <section class="pedido">
+    <h2>Pedido</h2>
+    <ul id="pedidoLista"></ul>
+    <button onclick="enviarPedido()">Generar pedido</button>
+    <a id="downloadLink" style="display:none" target="_blank">
+      <button>Descargar Excel</button>
+    </a>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

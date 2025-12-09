@@ -1,0 +1,47 @@
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="DylanHost - B2B Orders API",
+    version="0.1.0",
+    description="API demo de pedidos mayoristas con PDF y Excel"
+)
+
+# ---------- DATA DEMO ----------
+products = [
+    {
+        "id": 1,
+        "name": "Remera Básica",
+        "sku": "REM-001",
+        "image": "https://via.placeholder.com/150",
+        "variants": [
+            {"id": 101, "color": "Negro", "size": "M", "price": 5000},
+            {"id": 102, "color": "Blanco", "size": "L", "price": 5000}
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Buzo Canguro",
+        "sku": "BUZ-002",
+        "image": "https://via.placeholder.com/150",
+        "variants": [
+            {"id": 201, "color": "Gris", "size": "L", "price": 12000}
+        ]
+    }
+]
+
+# ---------- ENDPOINTS ----------
+@app.get("/", tags=["System"])
+def root():
+    return {"status": "API OK"}
+
+@app.get("/products", tags=["Products"])
+def get_products():
+    return products
+
+from fastapi import HTTPException
+from openpyxl import Workbook
+from fastapi.responses import StreamingResponse
+import io
+
+orders = []
+order_counter = 1

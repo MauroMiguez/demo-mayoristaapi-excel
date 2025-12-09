@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Catálogo Mayorista</h1>
+    <p>Seleccione los productos para generar su pedido</p>
+  </header>
+
+  <section class="catalog">
+
+    <!-- dentro de <section class="catalog"> reemplaza cada card por este ejemplo -->
+<div class="card" data-producto="Camiseta Morley" data-slug="camiseta-morley">
+  <div class="img-wrap">
+    <img class="main-img" src="/images/camiseta-morley/negro.jpg" alt="Camiseta Morley">
+  </div>
+
+  <h3>art. 1020 - Remera Lisa</h3>
+
+  <div class="thumbs" aria-hidden="false">
+    <img class="thumb" src="/images/camiseta-morley/negro.jpg" data-color="Negro" onclick="changeImage(this)">
+    <img class="thumb" src="/images/camiseta-morley/blanco.jpg" data-color="Hueso" onclick="changeImage(this)">
+    <img class="thumb" src="/images/camiseta-morley/gris.jpg" data-color="Gris" onclick="changeImage(this)">
+  </div>
+
+  <label>Color</label>
+  <select class="color">
+    <option>Negro</option>
+    <option>Hueso</option>
+    <option>Gris</option>
+  </select>
+
+  <label>Cantidad</label>
+  <input type="number" class="qty" value="1" min="1" />
+
+  <button onclick="agregarProducto(this)">Agregar</button>
+</div>
+
+
+    <!-- dentro de <section class="catalog"> reemplaza cada card por este ejemplo -->
+<div class="card" data-producto="Top Liso" data-slug="top-liso">
+  <div class="img-wrap">
+    <img class="main-img" src="/images/top-liso/negro.jpg" alt="Top Liso">
+  </div>
+
+  <h3>art. 600 - Top Liso</h3>
+
+  <div class="thumbs" aria-hidden="false">
+    <img class="thumb" src="/images/top-liso/negro.jpg" data-color="Negro" onclick="changeImage(this)">
+    <img class="thumb" src="/images/top-liso/blanco.jpg" data-color="Blanco" onclick="changeImage(this)">
+    <img class="thumb" src="/images/top-liso/gris.jpg" data-color="Gris" onclick="changeImage(this)">
+  </div>
+
+  <label>Color</label>
+  <select class="color">
+    <option>Negro</option>
+    <option>Blanco</option>
+    <option>Gris</option>
+  </select>
+
+  <label>Cantidad</label>
+  <input type="number" class="qty" value="1" min="1" />
+
+  <button onclick="agregarProducto(this)">Agregar</button>
+</div>
+
+
+  </section>
+
+  <section class="pedido">
+    <h2>Pedido</h2>
+    <ul id="pedidoLista"></ul>
+    <button onclick="enviarPedido()">Generar pedido</button>
+    <a id="downloadLink" style="display:none" target="_blank">
+      <button>Descargar Excel</button>
+    </a>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

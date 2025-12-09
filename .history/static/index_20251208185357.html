@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="brand-header">
+  <div class="brand-overlay">
+    <h1>Catálogo Mayorista</h1>
+    <p>Colección actual · Venta exclusiva</p>
+  </div>
+</header>
+
+<section class="cliente">
+  <h2>Datos del cliente</h2>
+
+  <div class="cliente-form">
+    <input id="nombre" placeholder="Nombre y apellido">
+    <input id="empresa" placeholder="Empresa">
+    <input id="provincia" placeholder="Provincia">
+    <input id="ciudad" placeholder="Ciudad">
+    <input id="cuit" placeholder="CUIT">
+    <input id="telefono" placeholder="Teléfono">
+    <button class="btn-registrar">Registrar datos</button>
+
+  </div>
+</section>
+
+<section class="pedido">
+  <h2>Pedido</h2>
+  <ul id="pedidoLista"></ul>
+  <button onclick="enviarPedido()">Generar pedido</button>
+</section>
+
+<section class="catalog">
+
+<!-- CARD 1 -->
+<div class="card" data-producto="art.1022 - Camiseta Morley" data-color="Negro">
+  <div class="img-wrap">
+    <img class="main-img" src="images/camiseta-morley/negro.jpg" />
+  </div>
+
+  <h3>art.1022 - Camiseta Morley</h3>
+  <p>colores: hueso - gris - negro</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/camiseta-morley/negro.jpg"
+      data-color="Negro"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/camiseta-morley/hueso.jpg"
+      data-color="Hueso"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/camiseta-morley/gris.jpg"
+      data-color="Gris"
+      onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+<!-- CARD 2 -->
+<div class="card" data-producto="art.600 - Corpiño doble tela" data-color="Negro">
+  <div class="img-wrap">
+    <img class="main-img" src="images/corpiño-doble-t/negro.jpg" />
+  </div>
+
+  <h3>art.600 - Corpiño doble tela perforado</h3>
+  <p>colores: blanco - negro</p>
+  <p class="price">Precio mayorista: $ 000</p>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+      src="images/corpiño-doble-t/negro.jpg"
+      data-color="Negro"
+      onclick="changeImg(this)" />
+    <img class="thumb"
+      src="images/corpiño-doble-t/blanco.jpg"
+      data-color="Blanco"
+      onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select class="size">
+      <option value="">Talle</option>
+      <option>85</option>
+      <option>90</option>
+      <option>95</option>
+      <option>100</option>
+      <option>105</option>
+    </select>
+
+    <input class="qty" type="number" min="1" placeholder="Cantidad" />
+  </div>
+
+  <button onclick="agregarProducto(this)">Agregar al pedido</button>
+</div>
+
+</section>
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

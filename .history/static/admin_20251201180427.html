@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Pedidos</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background:#f4f4f4 }
+    table { width:100%; background:white; border-collapse:collapse }
+    th, td { padding:10px; border-bottom:1px solid #ddd }
+    th { background:#111; color:white }
+    a { text-decoration:none; color:blue }
+  </style>
+</head>
+<body>
+
+<h1>📦 Pedidos recibidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Cliente</th>
+      <th>Empresa</th>
+      <th>Provincia</th>
+      <th>Items</th>
+      <th>Excel</th>
+    </tr>
+  </thead>
+  <tbody id="ordersTable"></tbody>
+</table>
+
+<script>
+fetch("/admin/orders")
+  .then(res => res.json())
+  .then(data => {
+    const table = document.getElementById("ordersTable");
+    data.forEach(o => {
+      table.innerHTML += `
+        <tr>
+          <td>${o.order_id}</td>
+          <td>${o.cliente.nombre}</td>
+          <td>${o.cliente.empresa}</td>
+          <td>${o.cliente.provincia}</td>
+          <td>${o.items.length}</td>
+          <th>Fecha</th>
+
+          <td>
+            <a href="/orders/${o.order_id}/excel" target="_blank">
+              Descargar
+            </a>
+          </td>
+        </tr>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>

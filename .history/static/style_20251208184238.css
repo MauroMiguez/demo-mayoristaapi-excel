@@ -1,0 +1,221 @@
+.brand-header {
+  width: 100%;
+  height: 280px;
+  background-image: url("/images/brand/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.brand-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.brand-overlay h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.brand-overlay p {
+  margin-top: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 768px) {
+  .brand-header {
+    height: 200px;
+  }
+
+  .brand-overlay h1 {
+    font-size: 1.6rem;
+  }
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+header {
+  background: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pedido {
+  background: white;
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 720px;
+}
+
+
+
+.pedido ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pedido li {
+  margin-bottom: 5px;
+}
+
+.img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* ✨ CLAVE */
+  overflow: hidden;
+  background: #f2f2f2;
+  border-radius: 10px;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* no deforma */
+  object-position: center top; /* ideal para prendas */
+}
+
+
+.thumbs {
+  display: block;
+  gap: 8px;
+  margin-top: 10px;
+  overflow-x: auto;   /* mobile friendly */
+}
+
+.thumb {
+  width: 56px;              /* ✅ CLAVE */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+
+.thumb.selected {
+  border-color: #000;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.price {
+  font-size: 13px;
+  color: #666;
+}
+
+
+.order {
+  display: flex;
+  gap: 6px;
+}
+
+.order select,
+.order input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-add {
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.cliente {
+  background: #f8f8f8;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.cliente h2 {
+  margin-bottom: 16px;
+}
+
+.cliente-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.cliente-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.cliente-warning {
+  display: none;
+  background: #ffeaea;
+  color: #b10000;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+

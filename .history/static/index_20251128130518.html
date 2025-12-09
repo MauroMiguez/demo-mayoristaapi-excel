@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="brand-header">
+  <div class="brand-overlay">
+    <h1>Catálogo Mayorista</h1>
+    <p>Colección actual · Venta exclusiva</p>
+  </div>
+</header>
+
+
+  <section class="catalog">
+
+<div class="card">
+  <div class="img-wrap">
+    <img class="main-img" src="images/camiseta-morley/negro.jpg" alt="Remera Oversize" />
+  </div>
+
+  <h3>art.1022 - Camiseta Morley</h3>
+  <p class="price">Precio mayorista</p>
+
+  <div class="thumbs">
+    <img class="thumb selected" src="images/camiseta-morley/negro.jpg" onclick="changeImg(this)" />
+    <img class="thumb" src="images/camiseta-morley/hueso.jpg" onclick="changeImg(this)" />
+    <img class="thumb" src="images/camiseta-morley/gris.jpg" onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+
+    <input type="number" min="0" placeholder="Cantidad" />
+  </div>
+
+  <button class="btn-add">Agregar al pedido</button>
+</div>
+
+
+    <!-- dentro de <section class="catalog"> reemplaza cada card por este ejemplo -->
+<div class="card" data-producto="Corpiño doble tela" data-slug="corpiño-doble-t">
+  <div class="img-wrap">
+    <img class="main-img" src="/images/corpiño-doble-t/negro.jpg" alt="Top Liso">
+  </div>
+
+  <h3>art. 600 - Corpiño doble tela perforado</h3>
+
+  <div class="thumbs" aria-hidden="false">
+    <img class="thumb" src="/images/corpiño-doble-t/negro.jpg" data-color="Negro" onclick="changeImage(this)">
+    <img class="thumb" src="/images/corpiño-doble-t/blanco.jpg" data-color="Blanco" onclick="changeImage(this)">
+    
+  </div>
+
+  <label>Color</label>
+  <select class="color">
+    <option>Negro</option>
+    <option>Blanco</option>
+    <option>Gris</option>
+  </select>
+
+  <label>Cantidad</label>
+  <input type="number" class="qty" value="1" min="1" />
+
+  <button onclick="agregarProducto(this)">Agregar</button>
+</div>
+
+
+  </section>
+
+  <section class="pedido">
+    <h2>Pedido</h2>
+    <ul id="pedidoLista"></ul>
+    <button onclick="enviarPedido()">Generar pedido</button>
+    <a id="downloadLink" style="display:none" target="_blank">
+      <button>Descargar Excel</button>
+    </a>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

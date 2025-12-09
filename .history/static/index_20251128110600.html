@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista DylanHost</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Catálogo Mayorista</h1>
+
+  <div class="product">
+    <h3>Remera Lisa</h3>
+    <select id="color">
+      <option>Negro</option>
+      <option>Blanco</option>
+    </select>
+    <input type="number" id="qty" value="1" min="1" />
+  </div>
+
+  <button onclick="enviarPedido()">Generar pedido</button>
+<a id="downloadLink" style="display:none" target="_blank">
+  <button>Descargar Excel</button>
+</a>
+
+  <pre id="resultado"></pre>
+
+  <script src="app.js"></script>
+</body>
+</html>

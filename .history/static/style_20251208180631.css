@@ -1,0 +1,94 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pedido {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.pedido ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pedido li {
+  margin-bottom: 5px;
+}
+
+.img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* ✨ CLAVE */
+  overflow: hidden;
+  background: #f2f2f2;
+  border-radius: 10px;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* no deforma */
+  object-position: center top; /* ideal para prendas */
+}
+
+
+.thumbs {
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+.thumb {
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  border-radius:6px;
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.thumb.selected {
+  border-color: #000;
+}

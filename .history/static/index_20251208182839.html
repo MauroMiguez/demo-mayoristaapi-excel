@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="brand-header">
+  <div class="brand-overlay">
+    <h1>Catálogo Mayorista</h1>
+    <p>Colección actual · Venta exclusiva</p>
+  </div>
+</header>
+
+
+<!-- CLIENTE -->
+<section class="cliente">
+  <h2>Datos del cliente</h2>
+
+  <p id="clienteWarning" class="cliente-warning" style="display:none">
+    Para continuar, completá tus datos de cliente.
+  </p>
+
+  <p id="clienteSuccess">
+    ✅ Datos del cliente registrados correctamente
+  </p>
+
+  <div class="cliente-form">
+    <input id="nombre" placeholder="Nombre y apellido" />
+    <input id="empresa" placeholder="Empresa" />
+    <input id="provincia" placeholder="Provincia" />
+    <input id="cuit" placeholder="CUIT" />
+    <input id="telefono" placeholder="Teléfono" />
+    <input id="observaciones" placeholder="Observaciones (opcional)" />
+  </div>
+
+  <button class="btn-registrar" onclick="registrarCliente()">
+    Registrar datos
+  </button>
+</section>
+
+<!-- PEDIDO -->
+<section class="pedido">
+  <h2>Pedido</h2>
+
+  <div id="pedidoLista"></div>
+  <div id="pedidoTotal"></div>
+
+  <button onclick="enviarPedido()">Generar pedido</button>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalog">
+
+  <!-- CARD 1 -->
+  <div class="card" data-producto="Camiseta Morley" data-color="Negro">
+  <div class="img-wrap">
+    <img class="main-img" src="./images/camiseta-morley/negro.jpg">
+  </div>
+
+  <div class="thumbs">
+    <img class="thumb selected"
+         src="./images/camiseta-morley/negro.jpg"
+         data-color="Negro"
+         onclick="changeImg(this)">
+    <img class="thumb"
+         src="./images/camiseta-morley/blanco.jpg"
+         data-color="Blanco"
+         onclick="changeImg(this)">
+  </div>
+
+  <select class="size">
+    <option value="">Talle</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
+
+  <input class="qty" type="number" min="1" placeholder="Cantidad">
+
+  <button onclick="agregarProducto(this)">Agregar</button>
+</div>
+
+
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Mayorista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="brand-header">
+  <div class="brand-overlay">
+    <h1>Catálogo Mayorista</h1>
+    <p>Colección actual · Venta exclusiva</p>
+  </div>
+</header>
+
+
+  <section class="catalog">
+
+<div class="card">
+  <div class="img-wrap">
+    <img class="main-img" src="images/camiseta-morley/negro.jpg" alt="Remera Oversize" />
+  </div>
+
+  <h3>art.1022 - Camiseta Morley</h3>
+  <p>colores: hueso -gris - negro</p>
+ 
+  <p class="price">Precio mayorista</p>
+
+  <div class="thumbs">
+    <img class="thumb selected" src="images/camiseta-morley/negro.jpg" onclick="changeImg(this)" />
+    <img class="thumb" src="images/camiseta-morley/hueso.jpg" onclick="changeImg(this)" />
+    <img class="thumb" src="images/camiseta-morley/gris.jpg" onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select>
+      <option>talle 1</option>
+      <option>talle 2</option>
+      <option>talle 3</option>
+      <option>talle 4</option>
+    </select>
+
+    <input type="number" min="0" placeholder="Cantidad" />
+  </div>
+
+  <button class="btn-add">Agregar al pedido</button>
+</div>
+
+<div class="card">
+  <div class="img-wrap">
+    <img class="main-img" src="images/camiseta-morley/negro.jpg" alt="Corpiño doble tela" />
+  </div>
+
+  <h3>art.600 - Corpiño doble tela perforado</h3>
+  <p>colores: blanco - negro</p>
+ 
+  <p class="price">Precio mayorista</p>
+
+  <div class="thumbs">
+    <img class="thumb selected" src="images/corpiño-doble-t/negro.jpg" onclick="changeImg(this)" />
+    <img class="thumb" src="images/corpiño-doble-t/blanco.jpg" onclick="changeImg(this)" />
+  </div>
+
+  <div class="order">
+    <select>
+      <option>talle 85</option>
+      <option>talle 90</option>
+      <option>talle 100</option>
+      <option>talle 4</option>
+    </select>
+
+    <input type="number" min="0" placeholder="Cantidad" />
+  </div>
+
+  <button class="btn-add">Agregar al pedido</button>
+</div>
+ 
+  </section>
+
+  <section class="pedido">
+    <h2>Pedido</h2>
+    <ul id="pedidoLista"></ul>
+    <button onclick="enviarPedido()">Generar pedido</button>
+    <a id="downloadLink" style="display:none" target="_blank">
+      <button>Descargar Excel</button>
+    </a>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

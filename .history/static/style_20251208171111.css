@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f4f4;
+  color: #111;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.brand-header {
+  height: 280px;
+  background: linear-gradient(180deg, #111, #333);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.brand-overlay {
+  text-align: center;
+}
+
+.brand-overlay h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.brand-overlay p {
+  opacity: .8;
+}
+
+section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
